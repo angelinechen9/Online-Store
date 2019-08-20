@@ -1,0 +1,11 @@
+
+  <strong>Cart:</strong>
+  <% @cart.line_items.each do |line_item| %>
+    <%= line_item.quantity %>
+    <%= line_item.product.name %>
+    <%= line_item.item_total_price %>
+    Total
+    <%= @cart.total_price %>
+  <% end %>
+  <%= button_to 'Check Out', new_order_path, method: :get %>
+  <%= button_to 'Empty Cart', @cart, method: :delete %>
